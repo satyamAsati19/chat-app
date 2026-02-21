@@ -139,7 +139,7 @@ function App() {
                   id="nickname"
                   value={nickname}
                   onChange={(e) => setNickname(e.target.value)}
-                  className="block w-full pl-11 pr-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  className="block w-full pl-11 pr-4 py-3 bg-black border border-zinc-800 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                   placeholder="Enter your nickname..."
                   autoFocus
                   required
@@ -148,7 +148,7 @@ function App() {
             </div>
             <button
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 px-4 rounded-xl shadow-lg shadow-blue-500/30 transition-all hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-2"
+              className="w-full bg-indigo-600 hover:bg-indigo-500 shadow-lg shadow-indigo-500/20 text-white font-semibold py-3 px-4 rounded-xl shadow-lg shadow-blue-500/30 transition-all hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-2"
             >
               Join Chat
             </button>
@@ -159,11 +159,12 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-50 font-sans flex flex-col items-center">
-      <div className="w-full max-w-4xl h-screen flex flex-col shadow-2xl bg-slate-800 border-x border-slate-700">
+    <div className="min-h-screen bg-black text-zinc-100 font-sans flex flex-col items-center">
+
+      <div className="w-full max-w-4xl h-screen flex flex-col shadow-2xl bg-zinc-900 border-x border-zinc-800">
 
         {/* Header */}
-        <header className="px-6 py-4 bg-slate-800 border-b border-slate-700 flex justify-between items-center shadow-sm z-10">
+        <header className="px-6 py-4 bg-zinc-900 border-b border-zinc-800 flex justify-between items-center shadow-sm z-10">
           <div>
             <h1 className="text-xl font-bold text-white">Global Chat</h1>
             <p className="text-xs text-slate-400">Logged in as <span className="text-blue-400 font-medium">{nickname}</span></p>
@@ -205,8 +206,8 @@ function App() {
                     <span className="text-xs text-slate-500">{time}</span>
                   </div>
                   <div className={`px-4 py-2.5 rounded-2xl max-w-[85%] md:max-w-[70%] text-[15px] leading-relaxed break-words shadow-sm ${isMe
-                    ? 'bg-blue-600 text-white rounded-tr-sm'
-                    : 'bg-slate-700 text-slate-200 rounded-tl-sm'
+                    ? 'bg-indigo-600 text-white rounded-tr-sm shadow-lg shadow-indigo-500/20'
+                    : 'bg-zinc-800 text-zinc-100 rounded-tl-sm'
                     }`}>
                     {msg.content}
                   </div>
@@ -225,12 +226,12 @@ function App() {
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               placeholder="Type a message..."
-              className="flex-1 bg-slate-900 border border-slate-700 text-slate-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-slate-500 transition-all"
+              className="flex-1 bg-black border border-zinc-800 text-slate-100 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-slate-500 transition-all"
             />
             <button
               type="submit"
               disabled={!inputValue.trim()}
-              className="bg-blue-600 hover:bg-blue-500 disabled:opacity-50 disabled:hover:bg-blue-600 text-white p-3 rounded-xl flex-shrink-0 transition-all active:scale-95 shadow-md shadow-blue-500/20"
+              className="bg-indigo-600 hover:bg-indigo-500 shadow-lg shadow-indigo-500/20 disabled:opacity-50 disabled:hover:bg-blue-600 text-white p-3 rounded-xl flex-shrink-0 transition-all active:scale-95 shadow-md shadow-blue-500/20"
             >
               <Send className="h-5 w-5" />
             </button>
